@@ -1,0 +1,46 @@
+@import 'fonts', 'kit', 'layout';
+
+html, body {
+    background: $color-page-background;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Montserrat', 'Helvetica';
+}
+
+.page-header{
+    margin-bottom: 40px;
+}
+
+.title-5{
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.tiles{
+    @include flex($direction: column, $align: center);
+
+    .tile{
+        width: 100%;
+        margin: 20px 0;
+        .title{
+            font-weight: 500;
+            margin: 0 auto 12px;
+            font-size: 32px;
+        }
+
+        .image{
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 100%;
+            background-color: #2A3435;
+            margin-bottom: 12px;
+
+            .img{
+                max-width: 100%;
+                aspect-ratio: 120/70;
+                object-fit: contain;
+                border-radius: 5px;
+            }
+        }
+    }
+}
