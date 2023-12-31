@@ -160,8 +160,17 @@ html, body {
     .footer-confession{
         margin-top: 80px;
 
+        h2{
+            @media screen and (max-width: 480px) {
+                font-size: 24px;
+            }
+        }
+
         p{
             font-size: 24px;
+            @media screen and (max-width: 480px) {
+                font-size: 20px;
+            }
         }
     }
 
