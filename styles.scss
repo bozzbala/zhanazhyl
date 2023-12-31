@@ -9,11 +9,117 @@ html, body {
 
 .page-header{
     margin-bottom: 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .down-arrow{
+        position: absolute;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+        animation: arrow 0.8s linear infinite;
+
+        img{
+            width: 50px;
+        }
+    }
+}
+
+.effect-special{
+    color: rgb(255, 109, 133);
+}
+
+.effect-fun{
+    color: hsl(280 80% 50%);
+}
+.effect-temirlan{
+    color: #11db11;
+    font-weight: 700;
+}
+
+.effect-overflow{
+    color: hsl(10 80% 50%);
+
+    &.underline-clip:after{
+        border-color: hsl(10 80% 50%);
+    }
+}
+
+.underlined {
+    /*   background: red; */
+      position: relative;
+}
+
+.underline-mask:after {
+    content: '';
+    position: absolute;
+    top: 110%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(280 80% 50%);
+    /* Use a conic gradient mask to hide and show the bits you want */
+    --spread: 140deg;
+    --start: 290deg;
+    mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+}
+
+
+.underline-overflow {
+    display: inline-block;
+    /* A little extra padding and overflow hidden   */
+    overflow: hidden;
+    padding-bottom: clamp(1rem, 2vmin, 2rem);
+}
+.underline-overflow:after {
+    content: '';
+    position: absolute;
+    top: 110%;
+    height: 150%;
+    aspect-ratio: 2.5 / 1;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    border-radius: 50%;
+    border: 6px solid hsl(10 80% 50%);
+}
+    
+.underline-clip:after {
+    content: '';
+    position: absolute;
+    top: 110%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid rgb(255, 109, 133);
+    /* Use a clip-path to hide and show the bits you want */
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
 }
 
 .title-5{
     font-weight: 600;
     font-size: 32px;
+    color:rgb(255, 109, 245);
+    position: relative;
+    width: max-content;
+    margin: auto auto 20px;
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        background-color: rgb(255, 109, 245);
+        height: 3px;
+    }
 }
 
 .tiles{
@@ -22,6 +128,7 @@ html, body {
     .tile{
         width: 100%;
         margin: 20px 0;
+
         .title{
             font-weight: 500;
             margin: 0 auto 12px;
@@ -32,15 +139,49 @@ html, body {
             padding: 10px;
             border-radius: 10px;
             max-width: 100%;
+            width: max-content;
+            margin: 0 auto 12px;
             background-color: #2A3435;
-            margin-bottom: 12px;
 
             .img{
-                max-width: 100%;
-                aspect-ratio: 120/70;
+                width: 100%;
+                height: auto;
                 object-fit: contain;
                 border-radius: 5px;
             }
+        }
+    }
+}
+
+.page-footer{
+    padding-bottom: 120px;
+
+    .footer-copyright{
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .footer-confession{
+        margin-top: 80px;
+
+        p{
+            font-size: 24px;
+        }
+    }
+    
+    .footer-title-1{
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    
+    .footer-down-arrow{
+        display: flex;
+        justify-content: center;
+        transform: translateY(0);
+        animation: arrow 0.8s linear infinite;
+    
+        img{
+            width: 50px;
         }
     }
 }

@@ -108,3 +108,21 @@ h6 {
 p {
     margin: 0 0 15px 0;
 }
+
+@keyframes arrow {
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
