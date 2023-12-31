@@ -97,6 +97,12 @@ html, body {
     position: relative;
     width: max-content;
     margin: auto auto 20px;
+
+    @media screen and (max-width: 480px) {
+        font-size: 20px;
+    }
+
+
     &::before{
         content: "";
         position: absolute;
@@ -119,6 +125,10 @@ html, body {
             font-weight: 500;
             margin: 0 auto 12px;
             font-size: 32px;
+
+            @media screen and (max-width: 480px) {
+                font-size: 18px;
+            }
         }
 
         .image{
